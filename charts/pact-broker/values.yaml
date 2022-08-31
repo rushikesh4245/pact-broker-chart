@@ -400,7 +400,12 @@ postgresql:
 
   # -- PostgreSQL architecture (`standalone` or `replication`)
   architecture: standalone
-
+  persistence:
+    # server.persistence.enabled is the toggle for server volume persistence.
+    enabled: true
+    storageClass: "standard"
+    # The storage space that should be claimed from the persistent volume
+    size: 20Gi
 # -- External database configuration
 externalDatabase:
 
